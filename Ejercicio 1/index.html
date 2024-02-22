@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Operaciones Matemáticas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Calculadora de Operaciones Matemáticas</h2>
+        <label for="operation">Selecciona una operación:</label>
+        <select id="operation">
+            <option value="a">3/2 + 4/3</option>
+            <option value="b">1/(x-5) - 3*x*y/4</option>
+            <option value="c">a*a/(b-c) + (d-e)/(f-g*h/j)</option>
+            <option value="d">m/n + p</option>
+            <option value="e">(m+n/p) / (q-r/s)</option>
+            <option value="f">(3*a+b) / (c-(d+5*e)/(f+g/(2*h)))</option>
+        </select>
+        <br>
+        <label for="values">Ingresa los valores separados por comas:</label>
+        <input type="text" id="values" placeholder="Ejemplo: 1, 2, 3, 4, 5, 6">
+        <input type="submit" value="Calcular" onclick="calculate()">
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculate() {
+            const operation = document.getElementById("operation").value;
+            const valuesInput = document.getElementById("values").value;
+            const values = valuesInput.split(",").map(Number);
+
+            let result;
+            switch (operation) {
+                case "a":
+                    result = (3 / 2) + (4 / 3);
+                    break;
+                case "b":
+                    const [x, y] = values;
+                    result = 1 / (x - 5) - 3 * x * y / 4;
+                    break;
+                case "c":
+                    const [a, b, c, d, e, f, g, h, j] = values;
+                    result = a * a / (b - c) + (d - e) / (f - g * h / j);
+                    break;
+                case "d":
+                    const [m, n, p] = values;
+                    result = m / n + p;
+                    break;
+                case "e":
+                    const [m2, n2, p2, q, r, s] = values;
+                    result = (m2 + n2 / p2) / (q - r / s);
+                    break;
+                case "f":
+                    const [a2, b2, c2, d2, e2, f2, g2, h2] = values;
+                    result = (3 * a2 + b2) / (c2 - (d2 + 5 * e2) / (f2 + g2 / (2 * h2)));
+                    break;
+                default:
+                    result = "Operación no válida";
+            }
+
+            const resultDiv = document.getElementById("result");
+            resultDiv.innerText = `El resultado es: ${result}`;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+  background-color: aliceblue;
+  height: 100px;
+  width: 100%;
+  margin: 0px;
+  text-align: center;
+  line-height: 100px;
+  max-width: 100%;
+  
+  }
+  img{
+    max-width: 10%;
+  }
+
+  .clearfix{
+    clear:both;
+  }
+ 
+  
+  .pizza-card {
+    text-align: center ;
+    border: 1px solid #ccc;
+    padding: 20px;
+    max-width: 300px;
+    float: left;
+    margin: 50px;
+    line-height: 30px;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+
+  .pizza-card2 {
+    text-align: center ;
+    border: 1px solid #ccc;
+    padding: 20px;
+    max-width: 300px;
+    float: left;
+    margin: 50px;
+    line-height: 30px;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+
+  .pizza-card3 {
+    text-align: center ;
+    border: 1px solid #ccc;
+    padding: 20px;
+    max-width: 300px;
+    float: left;
+    margin: 50px;
+    line-height: 30px;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+
+  .pizza-card4 {
+    text-align: center ;
+    border: 1px solid #ccc;
+    padding: 20px;
+    max-width: 300px;
+    float: left;
+    margin: 50px;
+    line-height: 30px;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+
+  .pizza-card5 {
+    text-align: center ;
+    border: 1px solid #ccc;
+    padding: 20px;
+    max-width: 300px;
+    float: left;
+    margin: 50px;
+    line-height: 30px;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+
+  button {
+    background-color:red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  

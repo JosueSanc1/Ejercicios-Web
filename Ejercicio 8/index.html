@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aumento de Sueldo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Calculadora de Aumento de Sueldo</h1>
+  <label for="sueldo">Ingrese el sueldo del trabajador:</label>
+  <br>
+  <input type="number" id="sueldo" min="1" required>
+  <button onclick="calcularAumento()">Calcular Aumento</button>
+  <br>
+  <p id="resultado"></p>
+
+  <script>
+    function calcularAumento() {
+      const sueldo = parseFloat(document.getElementById("sueldo").value);
+      let aumento = 0;
+
+      if (sueldo >= 3500 && sueldo <= 6000) {
+        aumento = 0.03;
+      } else if (sueldo >= 6001 && sueldo <= 10000) {
+        aumento = 0.07;
+      } else if (sueldo >= 10001 && sueldo <= 15000) {
+        aumento = 0.09;
+      }
+
+      const nuevoSueldo = sueldo + sueldo * aumento;
+      const resultadoElement = document.getElementById("resultado");
+
+      if (aumento > 0) {
+        resultadoElement.textContent = `El nuevo sueldo con el aumento aplicado es: $${nuevoSueldo.toFixed(2)}`;
+      } else {
+        resultadoElement.textContent = "No se aplicó ningún aumento.";
+      }
+    }
+  </script>
+</body>
+</html>
